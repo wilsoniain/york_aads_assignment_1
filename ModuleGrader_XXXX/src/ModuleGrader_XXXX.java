@@ -36,11 +36,10 @@ public class ModuleGrader_XXXX {
         System.out.println("Enter mark:\n");
         int markUser = markInput.nextInt(); // Read user input
         System.out.println("Mark is" + markUser);
+    
 
     }
-
-
-
+    
 
 }
 
