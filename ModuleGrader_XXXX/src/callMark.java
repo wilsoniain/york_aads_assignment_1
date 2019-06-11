@@ -5,7 +5,7 @@ public class callMark {
         
         ModuleGrader_XXXX Ob = new ModuleGrader_XXXX();
 
-        Ob.getValidModuleMark();
+        Ob.startModuleGrading();
         
         //Ob.gradeModule(66);
         
