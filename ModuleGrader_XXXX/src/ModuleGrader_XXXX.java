@@ -58,12 +58,14 @@ public class ModuleGrader_XXXX {
             answerType = answerInput.nextLine(); // Read user input
 
             if (answerType.equals("n")) {
-                return;
+                answerInput.close();
+                
 
             } else if (answerType.equals("y")) {
 
                 getValidModuleMark();
             }
+            
 
         }
 
