@@ -10,33 +10,35 @@ public class ModuleGrader_XXXX {
 
     }
 
-    public static void gradeModule(int a) {
-        if (a >= 0 && a < 40) {
+    public static void gradeModule(byte moduleGrade) {
+        if (moduleGrade >= 0 && moduleGrade < 40) {
             System.out.println("Outright Fail");
-        } else if (a >= 40 && a < 50) {
+        } else if (moduleGrade >= 40 && moduleGrade < 50) {
             System.out.println("Compensatable Fail");
-        } else if (a >= 50 && a < 60) {
+        } else if (moduleGrade >= 50 && moduleGrade < 60) {
             System.out.println("Satisfactory");
-        } else if (a >= 60 && a < 70) {
+        } else if (moduleGrade >= 60 && moduleGrade < 70) {
             System.out.println("Good");
-        } else if (a >= 70 && a <= 100) {
+        } else if (moduleGrade >= 70 && moduleGrade <= 100) {
             System.out.println("Excellent");
         }
 
     }
 
-    public static void getValidModuleMark() {
+    public static void getValidModuleMark(byte markUser) {
 
-        int markUser = 101;
+        markUser = 101;
 
-        while (markUser > 100) {
+        while (markUser > 100 && < 0) {
             Scanner markInput = new Scanner(System.in); // Create a Scanner object
             System.out.println("Enter module mark (0 to 100):");
 
             try {
-                markUser = markInput.nextInt(); // Read user input
+                markUser = markInput.nextByte(); // Read user input
             } catch (InputMismatchException e) {
-                markUser = 101;
+            	System.out.println("Incorrect input type or number out of correct range");
+            	markUser = 101;
+                markInput.close()
 
             }
 
