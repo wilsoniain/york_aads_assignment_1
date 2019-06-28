@@ -1,4 +1,5 @@
 import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 //York University Algorithms and Data Structures - Assignment 1
@@ -25,28 +26,34 @@ public class ModuleGrader_XXXX {
 
     }
 
-    public static void getValidModuleMark(byte markUser) {
+    public static void getValidModuleMark() {
 
-        markUser = 101;
+        byte markUser = 101;
 
-        while (markUser > 100 && < 0) {
+        while (markUser > 100 || markUser < 0) {
             Scanner markInput = new Scanner(System.in); // Create a Scanner object
             System.out.println("Enter module mark (0 to 100):");
 
             try {
                 markUser = markInput.nextByte(); // Read user input
-            } catch (InputMismatchException e) {
-            	System.out.println("Incorrect input type or number out of correct range");
+            //} catch (InputMismatchException e) {
+            	//System.out.println("Incorrect input type or number out of correct range");
+            	//markUser = 101;
+                //markInput.close();
+                
+                
+            } catch (NoSuchElementException e) {
             	markUser = 101;
-                markInput.close()
+                markInput.close();
+            
+            
 
             }
-
+            System.out.println("Incorrect input type or number out of correct range");
+            
         }
         gradeModule(markUser);
     }
-
-
     public static void startModuleGrading() {
 
         System.out.println("*********** Module Grading Program *********");
@@ -54,16 +61,17 @@ public class ModuleGrader_XXXX {
         String answerType = "y";
         getValidModuleMark();
 
-        while (!answerType.equals("n")) {
+        while (!answerType.equals("N")) {
             Scanner answerInput = new Scanner(System.in); // Create a Scanner object
-            System.out.println("Would you like to continue (y/n)");
-            answerType = answerInput.nextLine(); // Read user input
+            System.out.println("Would you like to continue (Y/N)");
+            answerType = answerInput.nextLine().toUpperCase(); // Read user input
 
-            if (answerType.equals("n")) {
-                answerInput.close();
+            if (answerType.equals("N")) {
+            	System.out.println("Bye");
+            	answerInput.close();
                 
 
-            } else if (answerType.equals("y")) {
+            } else if (answerType.equals("Y")) {
 
                 getValidModuleMark();
             }
