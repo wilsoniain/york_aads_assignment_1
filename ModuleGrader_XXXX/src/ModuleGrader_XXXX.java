@@ -1,5 +1,3 @@
-import java.util.InputMismatchException;
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 //York University Algorithms and Data Structures - Assignment 1
@@ -11,7 +9,7 @@ public class ModuleGrader_XXXX {
 
     }
 
-    public static void gradeModule(byte moduleGrade) {
+    public static void gradeModule(int moduleGrade) {
         if (moduleGrade >= 0 && moduleGrade < 40) {
             System.out.println("Outright Fail");
         } else if (moduleGrade >= 40 && moduleGrade < 50) {
@@ -27,32 +25,16 @@ public class ModuleGrader_XXXX {
     }
 
     public static void getValidModuleMark() {
-
-        byte markUser = 101;
-
-        while (markUser > 100 || markUser < 0) {
+       
+        int markUser = 50;
+       
+        do {
             Scanner markInput = new Scanner(System.in); // Create a Scanner object
             System.out.println("Enter module mark (0 to 100):");
-
-            try {
-                markUser = markInput.nextByte(); // Read user input
-            //} catch (InputMismatchException e) {
-            	//System.out.println("Incorrect input type or number out of correct range");
-            	//markUser = 101;
-                //markInput.close();
-                
-                
-            } catch (NoSuchElementException e) {
-            	markUser = 101;
-                markInput.close();
-            
-            
-
-            }
-            System.out.println("Incorrect input type or number out of correct range");
-            
-        }
-        gradeModule(markUser);
+            markUser = markInput.nextInt(); // Read user input
+            gradeModule(markUser);
+        } while (markUser > 100 || markUser < 0);
+     
     }
     public static void startModuleGrading() {
 
@@ -67,21 +49,21 @@ public class ModuleGrader_XXXX {
             answerType = answerInput.nextLine().toUpperCase(); // Read user input
 
             if (answerType.equals("N")) {
-            	System.out.println("Bye");
-            	answerInput.close();
-                
+             System.out.println("Bye");
+             answerInput.close();
+               
 
             } else if (answerType.equals("Y")) {
 
                 getValidModuleMark();
             }
-            
-
+           
         }
 
     }
 
 }
+
 
 
 
