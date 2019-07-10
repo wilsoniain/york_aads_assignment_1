@@ -26,50 +26,46 @@ public class DegreeGrader_XXXX {
    
         public static void getUserResults() {
        
-        int modAvg = 50;
-        int ismAvg = 50;
-        int compFail = 50;
-        int outFail = 5;
+        int modAvg = 1000;
+        int ismAvg = 1000;
+        int compFail = 1000;
+        int outFail = 1000;
+        
+        while (outFail <= 0 || outFail >= 11); {
        
-        do {
-           
-            do {
-       
-                do {
-
-                    do {
-                        Scanner outFailInput = new Scanner(System.in); // Create a Scanner object
-                        System.out.println("Enter number of number of outright failed modules (0 to 11):");
-                        outFail = outFailInput.nextInt(); // Read user input
-                        //outFailInput.close();
+        	Scanner outFailInput = new Scanner(System.in); // Create a Scanner object
+        	System.out.println("Enter number of number of outright failed modules (0 to 11):");
+        	outFail = outFailInput.nextInt(); // Read user input
+        }
+     
+        while (compFail <= 0 || compFail >= 180); {
                    
-                    } while (outFail <= 0 && outFail >= 11);
+        	Scanner compFailInput = new Scanner(System.in); // Create a Scanner object
+            System.out.println("Enter umber of compensentable failed credits (0 to 180):");
+            compFail = compFailInput.nextInt(); // Read user input
                    
-                    Scanner ismAvgInput = new Scanner(System.in); // Create a Scanner object
-                    System.out.println("Enter umber of compensentable failed credits (0 to 180):");
-                    ismAvg = ismAvgInput.nextInt(); // Read user input
-                    //ismAvgInput.close();
-                   
-                } while (compFail <= 0 && compFail >= 180);
+        } 
+        
+        while (ismAvg <= 0 || ismAvg >= 100); {
                
-                Scanner ismAvgInput = new Scanner(System.in); // Create a Scanner object
-                System.out.println("Enter ISM average (0 to 100):");
-                ismAvg = ismAvgInput.nextInt(); // Read user input
-                //ismAvgInput.close();
+        	Scanner ismAvgInput = new Scanner(System.in); // Create a Scanner object
+            System.out.println("Enter ISM average (0 to 100):");
+            ismAvg = ismAvgInput.nextInt(); // Read user input
+            
+        }
                
-            } while (ismAvg <= 0 && ismAvg >= 100);
+        while (modAvg <= 0 || modAvg >= 100); {
            
             Scanner modAvgInput = new Scanner(System.in); // Create a Scanner object
             System.out.println("Enter module average (0 to 100):");
             modAvg = modAvgInput.nextInt(); // Read user input
-            //modAvgInput.close();
-           
-        } while (modAvg <= 0 && modAvg >= 100);
+        }
+
+        
        
         gradeDegree(modAvg,ismAvg,compFail,outFail);
        
     }
-
 
 }
 
