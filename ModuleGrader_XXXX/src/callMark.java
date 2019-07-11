@@ -11,7 +11,7 @@ public class callMark {
         
         //Ob.gradeModule(66);
         
-        Ob.getUserResults();
+        Ob.startDegreeGrading();
         
     }
 

@@ -1,15 +1,12 @@
+//York University Algorithms and Data Structures - Assignment 1 - Part B
+
 import java.util.Scanner;
 
 public class DegreeGrader_XXXX {
+    
+// gradeDegree takes degree marks and returns the degree grade description.
    
-     public static void main(String[] args) {
-
-    }
-
-
-
-    public static void gradeDegree(int modAvg, int ismAvg, int compFail, int outFail) {
-       
+    public void gradeDegree(int modAvg, int ismAvg, int compFail, int outFail) {
        
        
         if (modAvg >= 70 && ismAvg >= 70 && compFail == 0 && outFail == 0) {
@@ -23,8 +20,9 @@ public class DegreeGrader_XXXX {
         }
     }
    
+// getUserResults takes user keyboard input and passes this to gradeDegree. Provides against invalid (out of range) user input.
    
-    public static void getUserResults() {
+    public void getUserResults() {
        
         int modAvg = 1000;
         int ismAvg = 1000;
@@ -34,32 +32,32 @@ public class DegreeGrader_XXXX {
         
         while (outFail < 0 || outFail > 11) {
        
-        	Scanner outFailInput = new Scanner(System.in); // Create a Scanner object
+        	Scanner outFailInput = new Scanner(System.in);
         	System.out.println("Enter number of number of outright failed modules (0 to 11):");
-        	outFail = outFailInput.nextInt(); // Read user input
+        	outFail = outFailInput.nextInt();
         }
         
         while (compFail < 0 || compFail > 180) {
                    
-        	Scanner compFailInput = new Scanner(System.in); // Create a Scanner object
-            System.out.println("Enter umber of compensentable failed credits (0 to 180):");
-            compFail = compFailInput.nextInt(); // Read user input
+        	Scanner compFailInput = new Scanner(System.in);
+            System.out.println("Enter number of compensentable failed credits (0 to 180):");
+            compFail = compFailInput.nextInt();
                    
         } 
         
         while (ismAvg < 0 || ismAvg > 100) {
                
-        	Scanner ismAvgInput = new Scanner(System.in); // Create a Scanner object
+        	Scanner ismAvgInput = new Scanner(System.in);
             System.out.println("Enter ISM average (0 to 100):");
-            ismAvg = ismAvgInput.nextInt(); // Read user input
+            ismAvg = ismAvgInput.nextInt();
             
         }
                
         while (modAvg < 0 || modAvg > 100) {
            
-            Scanner modAvgInput = new Scanner(System.in); // Create a Scanner object
+            Scanner modAvgInput = new Scanner(System.in);
             System.out.println("Enter module average (0 to 100):");
-            modAvg = modAvgInput.nextInt(); // Read user input
+            modAvg = modAvgInput.nextInt();
         }
      
 
@@ -67,6 +65,34 @@ public class DegreeGrader_XXXX {
        
         gradeDegree(modAvg,ismAvg,compFail,outFail);
        
+    }
+    
+// startDegreeGrading calls getUserResults. Provides user keyboard input loop to repeat getUserResults call.   
+
+    public void startDegreeGrading() {
+
+        System.out.println("*********** Degree Classification Program *********");
+
+        String answerType = "y";
+        getUserResults();
+
+        while (!answerType.equals("N")) {
+            Scanner answerInput = new Scanner(System.in);
+            System.out.println("Would you like to continue (Y/N)");
+            answerType = answerInput.nextLine().toUpperCase();
+
+            if (answerType.equals("N")) {
+             System.out.println("Bye");
+             answerInput.close();
+               
+
+            } else if (answerType.equals("Y")) {
+
+                getUserResults();
+            }
+           
+        }
+
     }
 
 }

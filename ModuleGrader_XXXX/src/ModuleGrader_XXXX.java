@@ -1,15 +1,13 @@
+//York University Algorithms and Data Structures - Assignment 1 - Part A
+
 import java.util.Scanner;
-
-//York University Algorithms and Data Structures - Assignment 1
-
 
 public class ModuleGrader_XXXX {
 
-    public static void main(String[] args) {
 
-    }
+// gradeModule takes a mark and returns the grade description.
 
-    public static void gradeModule(int moduleGrade) {
+    public void gradeModule(int moduleGrade) {
         if (moduleGrade >= 0 && moduleGrade < 40) {
             System.out.println("Outright Fail");
         } else if (moduleGrade >= 40 && moduleGrade < 50) {
@@ -23,20 +21,25 @@ public class ModuleGrader_XXXX {
         }
 
     }
+    
+// getValidModuleMark takes user keyboard input and passes this to gradeModule.
 
-    public static void getValidModuleMark() {
+    public void getValidModuleMark() {
        
         int markUser = 50;
        
         do {
-            Scanner markInput = new Scanner(System.in); // Create a Scanner object
+            Scanner markInput = new Scanner(System.in);
             System.out.println("Enter module mark (0 to 100):");
-            markUser = markInput.nextInt(); // Read user input
+            markUser = markInput.nextInt();
             gradeModule(markUser);
         } while (markUser > 100 || markUser < 0);
      
     }
-    public static void startModuleGrading() {
+    
+// startModuleGrading calls getValidModuleMark. Provides user keyboard input loop to repeat getValidModuleMark call.
+
+    public void startModuleGrading() {
 
         System.out.println("*********** Module Grading Program *********");
 
@@ -44,9 +47,9 @@ public class ModuleGrader_XXXX {
         getValidModuleMark();
 
         while (!answerType.equals("N")) {
-            Scanner answerInput = new Scanner(System.in); // Create a Scanner object
+            Scanner answerInput = new Scanner(System.in); 
             System.out.println("Would you like to continue (Y/N)");
-            answerType = answerInput.nextLine().toUpperCase(); // Read user input
+            answerType = answerInput.nextLine().toUpperCase(); 
 
             if (answerType.equals("N")) {
              System.out.println("Bye");
