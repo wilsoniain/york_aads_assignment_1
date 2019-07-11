@@ -24,21 +24,22 @@ public class DegreeGrader_XXXX {
     }
    
    
-        public static void getUserResults() {
+    public static void getUserResults() {
        
         int modAvg = 1000;
         int ismAvg = 1000;
         int compFail = 1000;
         int outFail = 1000;
         
-        while (outFail <= 0 || outFail >= 11); {
+        
+        while (outFail < 0 || outFail > 11) {
        
         	Scanner outFailInput = new Scanner(System.in); // Create a Scanner object
         	System.out.println("Enter number of number of outright failed modules (0 to 11):");
         	outFail = outFailInput.nextInt(); // Read user input
         }
-     
-        while (compFail <= 0 || compFail >= 180); {
+        
+        while (compFail < 0 || compFail > 180) {
                    
         	Scanner compFailInput = new Scanner(System.in); // Create a Scanner object
             System.out.println("Enter umber of compensentable failed credits (0 to 180):");
@@ -46,7 +47,7 @@ public class DegreeGrader_XXXX {
                    
         } 
         
-        while (ismAvg <= 0 || ismAvg >= 100); {
+        while (ismAvg < 0 || ismAvg > 100) {
                
         	Scanner ismAvgInput = new Scanner(System.in); // Create a Scanner object
             System.out.println("Enter ISM average (0 to 100):");
@@ -54,12 +55,13 @@ public class DegreeGrader_XXXX {
             
         }
                
-        while (modAvg <= 0 || modAvg >= 100); {
+        while (modAvg < 0 || modAvg > 100) {
            
             Scanner modAvgInput = new Scanner(System.in); // Create a Scanner object
             System.out.println("Enter module average (0 to 100):");
             modAvg = modAvgInput.nextInt(); // Read user input
         }
+     
 
         
        
