@@ -26,7 +26,7 @@ public class ModuleGrader_XXXX {
 
     public void getValidModuleMark() {
        
-        int markUser = 50;
+        int markUser;
        
         do {
             Scanner markInput = new Scanner(System.in);
