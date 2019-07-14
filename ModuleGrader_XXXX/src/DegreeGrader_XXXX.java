@@ -80,7 +80,6 @@ public class DegreeGrader_XXXX {
 
             if (answerType.equals("N")) {
              System.out.println("Bye");
-             answerInput.close();
                
 
             } else if (answerType.equals("Y")) {
