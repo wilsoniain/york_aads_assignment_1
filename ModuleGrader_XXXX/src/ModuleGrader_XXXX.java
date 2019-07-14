@@ -37,7 +37,7 @@ public class ModuleGrader_XXXX {
      
     }
     
-// startModuleGrading calls getValidModuleMark. Provides user keyboard input loop to repeat getValidModuleMark call.
+// startModuleGrading calls getValidModuleMark. Takes user keyboard input as a optional loop to repeat getValidModuleMark call.
 
     public void startModuleGrading() {
 

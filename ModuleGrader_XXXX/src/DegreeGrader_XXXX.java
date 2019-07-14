@@ -29,21 +29,12 @@ public class DegreeGrader_XXXX {
         int compFail = 1000;
         int outFail = 1000;
         
-        
-        while (outFail < 0 || outFail > 11) {
-       
-        	Scanner outFailInput = new Scanner(System.in);
-        	System.out.println("Enter number of number of outright failed modules (0 to 11):");
-        	outFail = outFailInput.nextInt();
+        while (modAvg < 0 || modAvg > 100) {
+           
+            Scanner modAvgInput = new Scanner(System.in);
+            System.out.println("Enter module average (0 to 100):");
+            modAvg = modAvgInput.nextInt();
         }
-        
-        while (compFail < 0 || compFail > 180) {
-                   
-        	Scanner compFailInput = new Scanner(System.in);
-            System.out.println("Enter number of compensentable failed credits (0 to 180):");
-            compFail = compFailInput.nextInt();
-                   
-        } 
         
         while (ismAvg < 0 || ismAvg > 100) {
                
@@ -52,16 +43,22 @@ public class DegreeGrader_XXXX {
             ismAvg = ismAvgInput.nextInt();
             
         }
-               
-        while (modAvg < 0 || modAvg > 100) {
-           
-            Scanner modAvgInput = new Scanner(System.in);
-            System.out.println("Enter module average (0 to 100):");
-            modAvg = modAvgInput.nextInt();
-        }
-     
 
+     
+        while (compFail < 0 || compFail > 180) {
+                   
+        	Scanner compFailInput = new Scanner(System.in);
+            System.out.println("Enter number of compensentable failed credits (0 to 180):");
+            compFail = compFailInput.nextInt();
+                   
+        } 
         
+        while (outFail < 0 || outFail > 11) {
+       
+        	Scanner outFailInput = new Scanner(System.in);
+        	System.out.println("Enter number of number of outright failed modules (0 to 11):");
+        	outFail = outFailInput.nextInt();
+        }
        
         gradeDegree(modAvg,ismAvg,compFail,outFail);
        
